@@ -1,0 +1,17 @@
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\obj\Debug\net6.0\HospitalManagementSystemBackend.BLL.csproj.AssemblyReference.cache
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\obj\Debug\net6.0\HospitalManagementSystemBackend.BLL.GeneratedMSBuildEditorConfig.editorconfig
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\obj\Debug\net6.0\HospitalManagementSystemBackend.BLL.AssemblyInfoInputs.cache
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\obj\Debug\net6.0\HospitalManagementSystemBackend.BLL.AssemblyInfo.cs
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\obj\Debug\net6.0\HospitalManagementSystemBackend.BLL.csproj.CoreCompileInputs.cache
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\bin\Debug\net6.0\HospitalManagementSystemBackend.BLL.deps.json
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\bin\Debug\net6.0\HospitalManagementSystemBackend.BLL.dll
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\bin\Debug\net6.0\HospitalManagementSystemBackend.BLL.pdb
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\bin\Debug\net6.0\HospitalManagementSystemBackend.DAL.dll
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\bin\Debug\net6.0\HospitalManagementSystemBackend.Models.dll
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\bin\Debug\net6.0\HospitalManagementSystemBackend.DAL.pdb
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\bin\Debug\net6.0\HospitalManagementSystemBackend.Models.pdb
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\obj\Debug\net6.0\HospitalManagementSystemBackend.BLL.csproj.CopyComplete
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\obj\Debug\net6.0\HospitalManagementSystemBackend.BLL.dll
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\obj\Debug\net6.0\refint\HospitalManagementSystemBackend.BLL.dll
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\obj\Debug\net6.0\HospitalManagementSystemBackend.BLL.pdb
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.BLL\obj\Debug\net6.0\ref\HospitalManagementSystemBackend.BLL.dll

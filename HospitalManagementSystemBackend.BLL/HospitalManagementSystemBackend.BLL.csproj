@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HospitalManagementSystemBackend.DAL\HospitalManagementSystemBackend.DAL.csproj" />
+    <ProjectReference Include="..\HospitalManagementSystemBackend.Models\HospitalManagementSystemBackend.Models.csproj" />
+  </ItemGroup>
+
+</Project>

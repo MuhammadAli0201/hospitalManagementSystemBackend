@@ -1,0 +1,17 @@
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\bin\Debug\net6.0\HospitalManagementSystemBackend.DAL.deps.json
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\bin\Debug\net6.0\HospitalManagementSystemBackend.DAL.runtimeconfig.json
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\bin\Debug\net6.0\HospitalManagementSystemBackend.DAL.dll
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\bin\Debug\net6.0\HospitalManagementSystemBackend.DAL.pdb
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\bin\Debug\net6.0\HospitalManagementSystemBackend.Models.dll
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\bin\Debug\net6.0\HospitalManagementSystemBackend.Models.pdb
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\obj\Debug\net6.0\HospitalManagementSystemBackend.DAL.csproj.AssemblyReference.cache
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\obj\Debug\net6.0\HospitalManagementSystemBackend.DAL.GeneratedMSBuildEditorConfig.editorconfig
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\obj\Debug\net6.0\HospitalManagementSystemBackend.DAL.AssemblyInfoInputs.cache
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\obj\Debug\net6.0\HospitalManagementSystemBackend.DAL.AssemblyInfo.cs
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\obj\Debug\net6.0\HospitalManagementSystemBackend.DAL.csproj.CoreCompileInputs.cache
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\obj\Debug\net6.0\HospitalManagementSystemBackend.DAL.csproj.CopyComplete
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\obj\Debug\net6.0\HospitalManagementSystemBackend.DAL.dll
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\obj\Debug\net6.0\refint\HospitalManagementSystemBackend.DAL.dll
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\obj\Debug\net6.0\HospitalManagementSystemBackend.DAL.pdb
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\obj\Debug\net6.0\HospitalManagementSystemBackend.DAL.genruntimeconfig.cache
+F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.DAL\obj\Debug\net6.0\ref\HospitalManagementSystemBackend.DAL.dll
