@@ -2035,11 +2035,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend.DAL\\HospitalManagementSystemBackend.DAL.csproj",
+      "projectUniqueName": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend.DAL\\HospitalManagementSystemBackend.DAL.csproj",
       "projectName": "HospitalManagementSystemBackend.DAL",
-      "projectPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend.DAL\\HospitalManagementSystemBackend.DAL.csproj",
+      "projectPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend.DAL\\HospitalManagementSystemBackend.DAL.csproj",
       "packagesPath": "C:\\Users\\aliaw\\.nuget\\packages\\",
-      "outputPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend.DAL\\obj\\",
+      "outputPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -2059,8 +2059,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj": {
-              "projectPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj"
+            "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj": {
+              "projectPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj"
             }
           }
         }

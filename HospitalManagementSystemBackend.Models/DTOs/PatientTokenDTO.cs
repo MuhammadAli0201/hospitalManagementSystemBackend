@@ -17,6 +17,7 @@ namespace HospitalManagementSystemBackend.Models.DTOs
         public DoctorDTO Doctor { get; set; }
         public DateTime Expiry { get; set; }
         public string Status { get; set; }
+        public Guid Token { get; set; }
 
         public PatientToken MapDTOToModel()
         {
@@ -28,7 +29,8 @@ namespace HospitalManagementSystemBackend.Models.DTOs
                 DoctorId = DoctorId,
                 Doctor = this.Doctor != null ? Doctor.MapDTOToModel() : null,
                 Expiry = Expiry,
-                Status = Status
+                Status = Status,
+                Token=this.Token
             };
         }
     }

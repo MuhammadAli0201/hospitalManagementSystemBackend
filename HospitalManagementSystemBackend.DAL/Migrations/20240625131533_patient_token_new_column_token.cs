@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace HospitalManagementSystemBackend.DAL.Migrations
 {
-    public partial class initial : Migration
+    public partial class patient_token_new_column_token : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -68,7 +68,8 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                     PatientId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     DoctorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Expiry = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Token = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -147,21 +148,21 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("0eaa11d6-4875-4312-9e12-9d3691c5777f"), "Morphine" },
-                    { new Guid("0ff11569-5654-49d6-80c7-41278461fa86"), "Metformin" },
-                    { new Guid("1202644d-a4e3-4c8a-8231-ef7f8d301cfa"), "Warfarin" },
-                    { new Guid("213b1942-6277-4664-b508-8eac370c9f02"), "Amoxicillin" },
-                    { new Guid("30556c41-88b7-4fac-a465-eb1d6864f6b6"), "Albuterol" },
-                    { new Guid("3212a800-cf55-413d-a4f3-58aeb5ef7bb3"), "Ibuprofen" },
-                    { new Guid("380560f0-8da6-4ab0-bf8f-7f13b7ed1ffc"), "Paracetamol" },
-                    { new Guid("44d29933-054c-48b2-bea3-074813a21c2b"), "Fluoxetine" },
-                    { new Guid("693fa0fb-f500-48bf-ad87-3beda10b87a6"), "Simvastatin" },
-                    { new Guid("7695536c-e3d5-4284-8942-1c6746b7f339"), "Omeprazole" },
-                    { new Guid("782d006b-db4e-41f6-9248-5b8470a564d9"), "Prednisone" },
-                    { new Guid("a0a3113a-b58b-4c9a-b9bf-eecb55710618"), "Amlodipine" },
-                    { new Guid("a116134f-928f-4678-877b-931ba8bedbe1"), "Diazepam" },
-                    { new Guid("c9e13b99-1667-48cb-b534-7bcc820f13ea"), "Hydrochlorothiazide" },
-                    { new Guid("f8725d7d-3509-496c-8bda-49082ef1cb50"), "Loratadine" }
+                    { new Guid("03c85095-c976-43f3-aa1e-294e704147fc"), "Amoxicillin" },
+                    { new Guid("0920bdc0-62dd-425c-9e5c-09baf7d1607e"), "Diazepam" },
+                    { new Guid("27355d7c-02fe-4254-a997-bdac889a94ff"), "Warfarin" },
+                    { new Guid("2ad8b7b6-4f0e-4f0b-815c-582aed90727f"), "Fluoxetine" },
+                    { new Guid("3204524c-827c-4c02-b64a-0f27feff5c68"), "Paracetamol" },
+                    { new Guid("343f8fe6-f45d-42d4-b3fd-56c9dc003a79"), "Omeprazole" },
+                    { new Guid("8f097174-d4ad-4e7a-a31f-38c046ee0ea5"), "Amlodipine" },
+                    { new Guid("94df7ffc-1281-4620-a64d-1c768b7c8df6"), "Ibuprofen" },
+                    { new Guid("a39d7eae-b49c-4066-90f3-dd2c65f8819b"), "Albuterol" },
+                    { new Guid("ab55f1f2-ad69-40f2-aa7f-07c92071b761"), "Morphine" },
+                    { new Guid("bc14bb02-e299-4f6e-87ea-db63c8b4bef3"), "Hydrochlorothiazide" },
+                    { new Guid("c76ed72a-e2e3-4dd9-87af-d36e0a127e66"), "Simvastatin" },
+                    { new Guid("c8bdbd60-4d34-46fc-9367-0c676306b84c"), "Prednisone" },
+                    { new Guid("d54f2c00-e4a8-4d8f-907e-805f278df8a9"), "Loratadine" },
+                    { new Guid("fed1adc9-0778-494d-b2bf-cb257e13dd33"), "Metformin" }
                 });
 
             migrationBuilder.InsertData(
@@ -169,12 +170,12 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                 columns: new[] { "Id", "Address", "Age", "AreaOfSpecialization", "CNIC", "DateOfBirth", "Discriminator", "FName", "GenderId", "LName", "MobileNo" },
                 values: new object[,]
                 {
-                    { new Guid("1a8fc091-442a-460e-8468-4829705e0874"), "567 Cedar St, City", 42, "Dermatology", "12345-678905", new DateTime(1982, 11, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), "Doctor", "David", new Guid("22222222-2222-2222-2222-222222222222"), "Brown", "123456785" },
-                    { new Guid("3298cb2d-2bac-41b7-badc-8997a33fc87f"), "456 Elm St, City", 40, "Orthopedics", "12345-678902", new DateTime(1984, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), "Doctor", "Emily", new Guid("22222222-2222-2222-2222-222222222222"), "Smith", "123456782" },
-                    { new Guid("4737db8d-c459-45df-9f31-7db7358b9c57"), "123 Main St, City", 35, "Cardiology", "12345-678901", new DateTime(1989, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Doctor", "John", new Guid("11111111-1111-1111-1111-111111111111"), "Doe", "123456781" },
-                    { new Guid("60829261-8a6c-4e19-91c0-1d46472e107d"), "890 Maple St, City", 37, "Oncology", "12345-678906", new DateTime(1987, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), "Doctor", "Jennifer", new Guid("33333333-3333-3333-3333-333333333333"), "Lee", "123456786" },
-                    { new Guid("e75dfae2-1bbf-430a-8b92-6910977b43c6"), "234 Pine St, City", 38, "Pediatrics", "12345-678904", new DateTime(1986, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "Doctor", "Sarah", new Guid("11111111-1111-1111-1111-111111111111"), "Williams", "123456784" },
-                    { new Guid("fe6e1c48-f484-4796-b261-81edab9fef3d"), "789 Oak St, City", 45, "Neurology", "12345-678903", new DateTime(1979, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "Doctor", "Michael", new Guid("33333333-3333-3333-3333-333333333333"), "Johnson", "123456783" }
+                    { new Guid("0ec584f4-f945-44e0-a53c-dbf4adf91680"), "890 Maple St, City", 37, "Oncology", "12345-678906", new DateTime(1987, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), "Doctor", "Jennifer", new Guid("33333333-3333-3333-3333-333333333333"), "Lee", "123456786" },
+                    { new Guid("412c2eaf-09ad-4daf-b3b0-a72f395fb630"), "456 Elm St, City", 40, "Orthopedics", "12345-678902", new DateTime(1984, 9, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), "Doctor", "Emily", new Guid("22222222-2222-2222-2222-222222222222"), "Smith", "123456782" },
+                    { new Guid("730e9aea-700c-40e5-8fe5-57211f9f68fe"), "567 Cedar St, City", 42, "Dermatology", "12345-678905", new DateTime(1982, 11, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), "Doctor", "David", new Guid("22222222-2222-2222-2222-222222222222"), "Brown", "123456785" },
+                    { new Guid("7a491719-5e4c-4a66-b1d9-b329f6861c2c"), "234 Pine St, City", 38, "Pediatrics", "12345-678904", new DateTime(1986, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "Doctor", "Sarah", new Guid("11111111-1111-1111-1111-111111111111"), "Williams", "123456784" },
+                    { new Guid("a2be6b28-5009-41f7-b017-89b553555ad9"), "123 Main St, City", 35, "Cardiology", "12345-678901", new DateTime(1989, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), "Doctor", "John", new Guid("11111111-1111-1111-1111-111111111111"), "Doe", "123456781" },
+                    { new Guid("be4e5bcf-3ff2-46b2-84db-a283d789f7a9"), "789 Oak St, City", 45, "Neurology", "12345-678903", new DateTime(1979, 3, 8, 0, 0, 0, 0, DateTimeKind.Unspecified), "Doctor", "Michael", new Guid("33333333-3333-3333-3333-333333333333"), "Johnson", "123456783" }
                 });
 
             migrationBuilder.CreateIndex(

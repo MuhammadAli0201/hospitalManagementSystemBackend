@@ -13,6 +13,7 @@ namespace HospitalManagementSystemBackend.Models.DTOs
         public Guid Id { get; set; }
         public Guid PatientScriptId { get; set; }
         public Guid MedicineId { get; set; }
+        public MedicineDTO Medicine { get; set; }
 
         public PatientScriptMedicine MapDTOToModel()
         {
@@ -21,6 +22,7 @@ namespace HospitalManagementSystemBackend.Models.DTOs
                 Id = this.Id,
                 PatientScriptId = this.PatientScriptId,
                 MedicineId = this.MedicineId,
+                Medicine = this.Medicine != null ? this.Medicine.MapDTOToModel() : null
             };
         }
     }

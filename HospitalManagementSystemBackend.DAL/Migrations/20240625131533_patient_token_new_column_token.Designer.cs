@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HospitalManagementSystemBackend.DAL.Migrations
 {
     [DbContext(typeof(HMSDbContext))]
-    [Migration("20240624113809_initial")]
-    partial class initial
+    [Migration("20240625131533_patient_token_new_column_token")]
+    partial class patient_token_new_column_token
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -73,77 +73,77 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("380560f0-8da6-4ab0-bf8f-7f13b7ed1ffc"),
+                            Id = new Guid("3204524c-827c-4c02-b64a-0f27feff5c68"),
                             Name = "Paracetamol"
                         },
                         new
                         {
-                            Id = new Guid("3212a800-cf55-413d-a4f3-58aeb5ef7bb3"),
+                            Id = new Guid("94df7ffc-1281-4620-a64d-1c768b7c8df6"),
                             Name = "Ibuprofen"
                         },
                         new
                         {
-                            Id = new Guid("f8725d7d-3509-496c-8bda-49082ef1cb50"),
+                            Id = new Guid("d54f2c00-e4a8-4d8f-907e-805f278df8a9"),
                             Name = "Loratadine"
                         },
                         new
                         {
-                            Id = new Guid("7695536c-e3d5-4284-8942-1c6746b7f339"),
+                            Id = new Guid("343f8fe6-f45d-42d4-b3fd-56c9dc003a79"),
                             Name = "Omeprazole"
                         },
                         new
                         {
-                            Id = new Guid("213b1942-6277-4664-b508-8eac370c9f02"),
+                            Id = new Guid("03c85095-c976-43f3-aa1e-294e704147fc"),
                             Name = "Amoxicillin"
                         },
                         new
                         {
-                            Id = new Guid("693fa0fb-f500-48bf-ad87-3beda10b87a6"),
+                            Id = new Guid("c76ed72a-e2e3-4dd9-87af-d36e0a127e66"),
                             Name = "Simvastatin"
                         },
                         new
                         {
-                            Id = new Guid("0ff11569-5654-49d6-80c7-41278461fa86"),
+                            Id = new Guid("fed1adc9-0778-494d-b2bf-cb257e13dd33"),
                             Name = "Metformin"
                         },
                         new
                         {
-                            Id = new Guid("1202644d-a4e3-4c8a-8231-ef7f8d301cfa"),
+                            Id = new Guid("27355d7c-02fe-4254-a997-bdac889a94ff"),
                             Name = "Warfarin"
                         },
                         new
                         {
-                            Id = new Guid("30556c41-88b7-4fac-a465-eb1d6864f6b6"),
+                            Id = new Guid("a39d7eae-b49c-4066-90f3-dd2c65f8819b"),
                             Name = "Albuterol"
                         },
                         new
                         {
-                            Id = new Guid("44d29933-054c-48b2-bea3-074813a21c2b"),
+                            Id = new Guid("2ad8b7b6-4f0e-4f0b-815c-582aed90727f"),
                             Name = "Fluoxetine"
                         },
                         new
                         {
-                            Id = new Guid("0eaa11d6-4875-4312-9e12-9d3691c5777f"),
+                            Id = new Guid("ab55f1f2-ad69-40f2-aa7f-07c92071b761"),
                             Name = "Morphine"
                         },
                         new
                         {
-                            Id = new Guid("c9e13b99-1667-48cb-b534-7bcc820f13ea"),
+                            Id = new Guid("bc14bb02-e299-4f6e-87ea-db63c8b4bef3"),
                             Name = "Hydrochlorothiazide"
                         },
                         new
                         {
-                            Id = new Guid("a0a3113a-b58b-4c9a-b9bf-eecb55710618"),
+                            Id = new Guid("8f097174-d4ad-4e7a-a31f-38c046ee0ea5"),
                             Name = "Amlodipine"
                         },
                         new
                         {
-                            Id = new Guid("782d006b-db4e-41f6-9248-5b8470a564d9"),
+                            Id = new Guid("c8bdbd60-4d34-46fc-9367-0c676306b84c"),
                             Name = "Prednisone"
                         },
                         new
                         {
-                            Id = new Guid("a116134f-928f-4678-877b-931ba8bedbe1"),
+                            Id = new Guid("0920bdc0-62dd-425c-9e5c-09baf7d1607e"),
                             Name = "Diazepam"
                         });
                 });
@@ -216,6 +216,9 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                     b.Property<string>("Status")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("Token")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
 
                     b.HasIndex("DoctorId");
@@ -286,7 +289,7 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("4737db8d-c459-45df-9f31-7db7358b9c57"),
+                            Id = new Guid("a2be6b28-5009-41f7-b017-89b553555ad9"),
                             Address = "123 Main St, City",
                             Age = 35,
                             CNIC = "12345-678901",
@@ -299,7 +302,7 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("3298cb2d-2bac-41b7-badc-8997a33fc87f"),
+                            Id = new Guid("412c2eaf-09ad-4daf-b3b0-a72f395fb630"),
                             Address = "456 Elm St, City",
                             Age = 40,
                             CNIC = "12345-678902",
@@ -312,7 +315,7 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fe6e1c48-f484-4796-b261-81edab9fef3d"),
+                            Id = new Guid("be4e5bcf-3ff2-46b2-84db-a283d789f7a9"),
                             Address = "789 Oak St, City",
                             Age = 45,
                             CNIC = "12345-678903",
@@ -325,7 +328,7 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e75dfae2-1bbf-430a-8b92-6910977b43c6"),
+                            Id = new Guid("7a491719-5e4c-4a66-b1d9-b329f6861c2c"),
                             Address = "234 Pine St, City",
                             Age = 38,
                             CNIC = "12345-678904",
@@ -338,7 +341,7 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1a8fc091-442a-460e-8468-4829705e0874"),
+                            Id = new Guid("730e9aea-700c-40e5-8fe5-57211f9f68fe"),
                             Address = "567 Cedar St, City",
                             Age = 42,
                             CNIC = "12345-678905",
@@ -351,7 +354,7 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("60829261-8a6c-4e19-91c0-1d46472e107d"),
+                            Id = new Guid("0ec584f4-f945-44e0-a53c-dbf4adf91680"),
                             Address = "890 Maple St, City",
                             Age = 37,
                             CNIC = "12345-678906",

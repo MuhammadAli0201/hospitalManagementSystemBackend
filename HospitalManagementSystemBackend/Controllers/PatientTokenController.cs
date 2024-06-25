@@ -20,10 +20,12 @@ namespace HospitalManagementSystemBackend.Controllers
         public async Task<IActionResult> CreateOrUpdate(PatientTokenDTO token)
         {
             var patientToken = token.MapDTOToModel();
+            patientToken.Token = Guid.NewGuid();
+
             if (token.Id == Guid.Empty)
                 patientToken = await _patientTokenRepository.Add(patientToken);
-            else
-                patientToken = await _patientTokenRepository.Update(patientToken);
+            else            
+                patientToken = await _patientTokenRepository.Update(patientToken);            
 
             if (patientToken == null) return BadRequest();
 
@@ -62,6 +64,17 @@ namespace HospitalManagementSystemBackend.Controllers
             var response = await _patientTokenRepository.SearchByDateRange(min,max);
             List<PatientTokenDTO> patientTokenDTOs = response.Select(r => r.MapModelToDTO()).ToList();
             return Ok(patientTokenDTOs);
+        }
+        
+        [HttpDelete(nameof(Delete))]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            var result = await _patientTokenRepository.GetSingle(id);
+            if (result == null) return NotFound();
+
+            var response = await _patientTokenRepository.Delete(id);
+            var patientTokenDTO = response.MapModelToDTO();
+            return Ok(patientTokenDTO);
         }
     }
 }

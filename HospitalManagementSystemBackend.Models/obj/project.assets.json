@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj",
+      "projectUniqueName": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj",
       "projectName": "HospitalManagementSystemBackend.Models",
-      "projectPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj",
+      "projectPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj",
       "packagesPath": "C:\\Users\\aliaw\\.nuget\\packages\\",
-      "outputPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend.Models\\obj\\",
+      "outputPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

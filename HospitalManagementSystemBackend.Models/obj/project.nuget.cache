@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2EfSLLUt+8vdsiuvhPXdgUBZzYxFKm1VSehsXS+VoDka0oqo1beXMca99C9Pu3VY32zO2ANKGZ3YvDbGbzLZVw==",
+  "dgSpecHash": "O5HKVDWI43ezxD9MP8a1BdFk9Mjr87YPyoQUjnJ7uLUEq9GIQeoKiDBvXzS+f/P22NVjfuqt+90xUVrujbuUFg==",
   "success": true,
-  "projectFilePath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj",
+  "projectFilePath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

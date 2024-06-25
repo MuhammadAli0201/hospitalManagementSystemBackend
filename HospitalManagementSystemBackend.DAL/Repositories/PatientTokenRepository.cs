@@ -1,13 +1,6 @@
 ﻿using HospitalManagementSystemBackend.DAL.Interfaces;
 using HospitalManagementSystemBackend.Models.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace HospitalManagementSystemBackend.DAL.Repositories
 {
@@ -56,13 +49,9 @@ namespace HospitalManagementSystemBackend.DAL.Repositories
                 {
                     var result = await (from pt in _context.PatientToken
                                         join
-                                        p in _context.Patient on pt.PatientId equals p.Id
+                                        p in _context.Patient.Include(pa => pa.Gender) on pt.PatientId equals p.Id
                                         join
-                                        d in _context.Doctor on pt.DoctorId equals d.Id
-                                        join
-                                        pg in _context.Gender on p.GenderId equals pg.Id
-                                        join
-                                        dg in _context.Gender on d.GenderId equals dg.Id
+                                        d in _context.Doctor.Include(dc => dc.Gender) on pt.DoctorId equals d.Id
                                         where
                                        (p.FName + " " + p.LName).Contains(query) ||
                                        p.CNIC.Contains(query) || p.MobileNo.Contains(query) ||
@@ -72,9 +61,9 @@ namespace HospitalManagementSystemBackend.DAL.Repositories
                                         {
                                             Id = p.Id,
                                             DoctorId = pt.DoctorId,
-                                            Doctor = pt.Doctor,
+                                            Doctor = d,
                                             PatientId = pt.PatientId,
-                                            Patient = pt.Patient,
+                                            Patient = p,
                                             Expiry = pt.Expiry,
                                             Status = pt.Status
                                         }
@@ -98,22 +87,18 @@ namespace HospitalManagementSystemBackend.DAL.Repositories
                 {
                     var result = await (from pt in _context.PatientToken
                                         join
-                                        p in _context.Patient on pt.PatientId equals p.Id
+                                         p in _context.Patient.Include(pa => pa.Gender) on pt.PatientId equals p.Id
                                         join
-                                        d in _context.Doctor on pt.DoctorId equals d.Id
-                                        join
-                                        pg in _context.Gender on p.GenderId equals pg.Id
-                                        join
-                                        dg in _context.Gender on d.GenderId equals dg.Id
+                                        d in _context.Doctor.Include(dc => dc.Gender) on pt.DoctorId equals d.Id
                                         where
                                         pt.Expiry >= min && pt.Expiry <= max
                                         select new PatientToken
                                         {
                                             Id = p.Id,
                                             DoctorId = pt.DoctorId,
-                                            Doctor = pt.Doctor,
+                                            Doctor = d,
                                             PatientId = pt.PatientId,
-                                            Patient = pt.Patient,
+                                            Patient = p,
                                             Expiry = pt.Expiry,
                                             Status = pt.Status
                                         }

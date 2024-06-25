@@ -2482,11 +2482,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend\\HospitalManagementSystemBackend.csproj",
+      "projectUniqueName": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend\\HospitalManagementSystemBackend.csproj",
       "projectName": "HospitalManagementSystemBackend",
-      "projectPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend\\HospitalManagementSystemBackend.csproj",
+      "projectPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend\\HospitalManagementSystemBackend.csproj",
       "packagesPath": "C:\\Users\\aliaw\\.nuget\\packages\\",
-      "outputPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend\\obj\\",
+      "outputPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -2506,11 +2506,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend.DAL\\HospitalManagementSystemBackend.DAL.csproj": {
-              "projectPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend.DAL\\HospitalManagementSystemBackend.DAL.csproj"
+            "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend.DAL\\HospitalManagementSystemBackend.DAL.csproj": {
+              "projectPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend.DAL\\HospitalManagementSystemBackend.DAL.csproj"
             },
-            "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj": {
-              "projectPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj"
+            "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj": {
+              "projectPath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend.Models\\HospitalManagementSystemBackend.Models.csproj"
             }
           }
         }

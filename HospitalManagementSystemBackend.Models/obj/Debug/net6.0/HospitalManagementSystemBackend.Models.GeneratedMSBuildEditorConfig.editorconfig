@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HospitalManagementSystemBackend.Models
-build_property.ProjectDir = F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\HospitalManagementSystemBackend.Models\
+build_property.ProjectDir = F:\Stallions\Intern\Angular+Dotnet\HospitalManagementSystem\backend\HospitalManagementSystemBackend.Models\

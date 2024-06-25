@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+y+GRi0/Lxe+GGrIF/XbgEA3j5nIB6hfsDz9gV6i98M90x07XUIEbAQRsVYOXx0WuY5xSXKFYBqiw2zstnll7w==",
+  "dgSpecHash": "mXDmQchd+Tzcpl1Gc44g+BNIO447o9ZFSRnm29H+x8PcyfKgwCPtiteCeFWzHzCzcutAD6A+ENE9crOALZThXA==",
   "success": true,
-  "projectFilePath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\HospitalManagementSystemBackend\\HospitalManagementSystemBackend.csproj",
+  "projectFilePath": "F:\\Stallions\\Intern\\Angular+Dotnet\\HospitalManagementSystem\\backend\\HospitalManagementSystemBackend\\HospitalManagementSystemBackend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aliaw\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

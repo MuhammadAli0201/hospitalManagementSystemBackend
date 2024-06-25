@@ -22,6 +22,7 @@ namespace HospitalManagementSystemBackend.Models.Models
                 Id = this.Id,
                 PatientScriptId = this.PatientScriptId,
                 MedicineId = this.MedicineId,
+                Medicine = this.Medicine != null ? this.Medicine.MapModelToDTO() : null
             };
         }
     }
