@@ -1,5 +1,4 @@
 ﻿using HospitalManagementSystemBackend.DAL.Interfaces;
-using HospitalManagementSystemBackend.DAL.Repositories;
 using HospitalManagementSystemBackend.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,7 +26,7 @@ namespace HospitalManagementSystemBackend.Controllers
 
             if (patientScript == null) return BadRequest();
 
-            patientScriptDTO=patientScript.MapModelToDTO();
+            patientScriptDTO = patientScript.MapModelToDTO();
             return Ok(patientScriptDTO);
         }
 
@@ -35,7 +34,7 @@ namespace HospitalManagementSystemBackend.Controllers
         public async Task<IActionResult> GetById(Guid id)
         {
             var response = await _patientScriptRepository.GetSingle(id);
-            if(response == null) return NotFound();
+            if (response == null) return NotFound();
 
             var patientScriptTokenDTO = response.MapModelToDTO();
             return Ok(patientScriptTokenDTO);

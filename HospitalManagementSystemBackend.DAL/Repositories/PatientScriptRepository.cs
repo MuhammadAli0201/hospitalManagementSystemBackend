@@ -17,7 +17,11 @@ namespace HospitalManagementSystemBackend.DAL.Repositories
         {
             try
             {
-                var result = await _context.PatientScript.Include(ps => ps.PatientScriptMedicines).ThenInclude(psm => psm.Medicine).Where(ps => ps.PatientTokenId.Equals(tokenId)).ToListAsync();
+                var result = await _context.PatientScript
+                    .Include(ps => ps.PatientToken).ThenInclude(pt => pt.Doctor)
+                    .Include(ps => ps.PatientToken).ThenInclude(pt => pt.Patient)
+                    .Include(ps => ps.PatientScriptMedicines).ThenInclude(psm => psm.Medicine)
+                    .Where(ps => ps.PatientTokenId.Equals(tokenId)).OrderByDescending(ps => ps.VisitDate).ToListAsync();
                 return result;
             }
             catch (Exception ex)

@@ -1,6 +1,5 @@
 ﻿using HospitalManagementSystemBackend.DAL.Interfaces;
 using HospitalManagementSystemBackend.Models.DTOs;
-using HospitalManagementSystemBackend.Models.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospitalManagementSystemBackend.Controllers
@@ -10,10 +9,13 @@ namespace HospitalManagementSystemBackend.Controllers
     public class PatientTokenController : ControllerBase
     {
         private readonly IPatientTokenRepository _patientTokenRepository;
+        private readonly IPatientScriptRepository _patientScriptRepository;
 
-        public PatientTokenController(IPatientTokenRepository patientTokenRepository)
+        public PatientTokenController(IPatientTokenRepository patientTokenRepository,
+            IPatientScriptRepository patientScriptRepository)
         {
             _patientTokenRepository = patientTokenRepository;
+            _patientScriptRepository = patientScriptRepository;
         }
 
         [HttpPost(nameof(CreateOrUpdate))]
@@ -24,8 +26,8 @@ namespace HospitalManagementSystemBackend.Controllers
 
             if (token.Id == Guid.Empty)
                 patientToken = await _patientTokenRepository.Add(patientToken);
-            else            
-                patientToken = await _patientTokenRepository.Update(patientToken);            
+            else
+                patientToken = await _patientTokenRepository.Update(patientToken);
 
             if (patientToken == null) return BadRequest();
 
@@ -41,6 +43,14 @@ namespace HospitalManagementSystemBackend.Controllers
             return Ok(patientTokens);
         }
 
+        [HttpGet(nameof(IsTokenUpdateable))]
+        public async Task<IActionResult> IsTokenUpdateable(Guid id)
+        {
+            var response = await _patientScriptRepository.GetScriptsByTokenId(id);
+            if(response.Any()) return Ok(false);
+            else return Ok(true);
+        }
+
         [HttpGet(nameof(GetSingle))]
         public async Task<IActionResult> GetSingle(Guid id)
         {
@@ -49,7 +59,7 @@ namespace HospitalManagementSystemBackend.Controllers
 
             return Ok(response.MapModelToDTO());
         }
-        
+
         [HttpGet(nameof(Search))]
         public async Task<IActionResult> Search(string query)
         {
@@ -61,11 +71,11 @@ namespace HospitalManagementSystemBackend.Controllers
         [HttpGet(nameof(SearchByDateRange))]
         public async Task<IActionResult> SearchByDateRange(DateTime min, DateTime max)
         {
-            var response = await _patientTokenRepository.SearchByDateRange(min,max);
+            var response = await _patientTokenRepository.SearchByDateRange(min, max);
             List<PatientTokenDTO> patientTokenDTOs = response.Select(r => r.MapModelToDTO()).ToList();
             return Ok(patientTokenDTOs);
         }
-        
+
         [HttpDelete(nameof(Delete))]
         public async Task<IActionResult> Delete(Guid id)
         {
