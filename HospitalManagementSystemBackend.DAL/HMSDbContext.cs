@@ -12,12 +12,12 @@ namespace HospitalManagementSystemBackend.DAL
     public class HMSDbContext : DbContext
     {
         public DbSet<Patient> Patient { get; set; }
-        public DbSet<PatientScript> PatientScript { get; set; }
+        public DbSet<PatientDoctorScript> PatientScript { get; set; }
         public DbSet<Doctor> Doctor { get; set; }
         public DbSet<Gender> Gender { get; set; }
         public DbSet<Medicine> Medicine { get; set; }
-        public DbSet<PatientScriptMedicine> PatientScriptMedicine { get; set; }
-        public DbSet<PatientToken> PatientToken { get; set; }
+        public DbSet<PatientDoctorScriptMedicine> PatientScriptMedicine { get; set; }
+        public DbSet<PatientDoctorToken> PatientToken { get; set; }
         public HMSDbContext(DbContextOptions<HMSDbContext> options) :base(options)
         {
             
@@ -31,10 +31,10 @@ namespace HospitalManagementSystemBackend.DAL
             modelBuilder.ApplyConfiguration(new PatientConfig());
             modelBuilder.ApplyConfiguration(new DoctorConfig());
             modelBuilder.ApplyConfiguration(new GenderConfig());
-            modelBuilder.ApplyConfiguration(new PatientScriptConfig());
+            modelBuilder.ApplyConfiguration(new PatientDoctorScriptConfig());
             modelBuilder.ApplyConfiguration(new MedicineConfig());
-            modelBuilder.ApplyConfiguration(new PatientScriptMedicineConfig());
-            modelBuilder.ApplyConfiguration(new PatientTokenConfig());
+            modelBuilder.ApplyConfiguration(new PatientDoctorScriptMedicineConfig());
+            modelBuilder.ApplyConfiguration(new PatientDoctorTokenConfig());
         }
 
     }

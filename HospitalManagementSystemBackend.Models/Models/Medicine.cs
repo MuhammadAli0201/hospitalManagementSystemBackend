@@ -6,7 +6,7 @@ namespace HospitalManagementSystemBackend.Models.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public List<PatientScriptMedicine> PatientScriptMedicines { get; set; }
+        public List<PatientDoctorScriptMedicine> PatientScriptMedicines { get; set; }
 
         public MedicineDTO MapModelToDTO()
         {

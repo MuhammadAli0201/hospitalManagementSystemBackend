@@ -15,6 +15,16 @@ namespace HospitalManagementSystemBackend.DAL.Config
         {
             builder.Property(p => p.AreaOfSpecialization).IsRequired();
 
+            builder.HasMany(d => d.PatientDoctorTokens)
+                .WithOne(pt => pt.Doctor)
+                .HasForeignKey(pt => pt.DoctorId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            builder.HasMany(d => d.PatientDoctorScripts)
+                .WithOne(ps => ps.Doctor)
+                .HasForeignKey(pt => pt.DoctorId)
+                .OnDelete(DeleteBehavior.NoAction);
+
             builder.HasData(
                 new Doctor
                 {

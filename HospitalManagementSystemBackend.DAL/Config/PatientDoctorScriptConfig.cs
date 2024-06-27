@@ -10,22 +10,22 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystemBackend.DAL.Config
 {
-    internal class PatientScriptConfig : IEntityTypeConfiguration<PatientScript>
+    internal class PatientDoctorScriptConfig : IEntityTypeConfiguration<PatientDoctorScript>
     {
-        public void Configure(EntityTypeBuilder<PatientScript> builder)
+        public void Configure(EntityTypeBuilder<PatientDoctorScript> builder)
         {
             builder.HasKey(ps => ps.Id);
             builder.Property(ps => ps.VisitDate).IsRequired();
             builder.Property(ps => ps.DiseaseDiagnosed).IsRequired();
             builder.Property(ps => ps.TotalBill).IsRequired();
 
-            builder.HasMany(ps => ps.PatientScriptMedicines)
+            builder.HasMany(ps => ps.PatientDoctorScriptMedicines)
                 .WithOne()
-                .HasForeignKey(pm => pm.PatientScriptId)
+                .HasForeignKey(pm => pm.PatientDoctorScriptId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            builder.HasOne(ps => ps.PatientToken)
-                .WithMany(p => p.PatientScripts)
+            builder.HasOne(ps => ps.PatientDoctorToken)
+                .WithMany(p => p.PatientDoctorScripts)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

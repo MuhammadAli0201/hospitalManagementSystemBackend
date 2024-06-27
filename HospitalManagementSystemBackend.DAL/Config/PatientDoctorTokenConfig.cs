@@ -10,20 +10,20 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystemBackend.DAL.Config
 {
-    internal class PatientTokenConfig : IEntityTypeConfiguration<PatientToken>
+    internal class PatientDoctorTokenConfig : IEntityTypeConfiguration<PatientDoctorToken>
     {
-        public void Configure(EntityTypeBuilder<PatientToken> builder)
+        public void Configure(EntityTypeBuilder<PatientDoctorToken> builder)
         {
             builder.HasKey(pt => pt.Id);
             builder.Property(pt => pt.Expiry).IsRequired();
 
             builder.HasOne(pt => pt.Patient)
-                .WithMany(p => p.PatientTokens)
+                .WithMany(p => p.PatientDoctorTokens)
                 .HasForeignKey(pt => pt.PatientId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(pt => pt.Doctor)
-                .WithMany(p => p.PatientTokens)
+                .WithMany(p => p.PatientDoctorTokens)
                 .HasForeignKey(pt => pt.DoctorId)
                 .OnDelete(DeleteBehavior.NoAction);
         }

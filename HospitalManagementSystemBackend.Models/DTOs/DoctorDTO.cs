@@ -10,6 +10,8 @@ namespace HospitalManagementSystemBackend.Models.DTOs
     public class DoctorDTO : PersonDTO
     {
         public string AreaOfSpecialization { get; set; }
+        public List<PatientDoctorScriptDTO> PatientDoctorScripts { get; set; }
+        public List<PatientDoctorTokenDTO> PatientDoctorTokens { get; set; }
 
         public override Doctor MapDTOToModel()
         {
@@ -25,7 +27,7 @@ namespace HospitalManagementSystemBackend.Models.DTOs
                 Address = this.Address,
                 AreaOfSpecialization = this.AreaOfSpecialization,
                 GenderId = this.GenderId,
-                Gender = this.Gender != null ? this.Gender.MapDTOToModel() : null
+                Gender = this.Gender != null ? this.Gender.MapDTOToModel() : null,
             };
         }
 

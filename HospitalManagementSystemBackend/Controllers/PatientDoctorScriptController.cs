@@ -6,17 +6,17 @@ namespace HospitalManagementSystemBackend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PatientScriptController : ControllerBase
+    public class PatientDoctorScriptController : ControllerBase
     {
         private readonly IPatientScriptRepository _patientScriptRepository;
 
-        public PatientScriptController(IPatientScriptRepository patientScriptRepository)
+        public PatientDoctorScriptController(IPatientScriptRepository patientScriptRepository)
         {
             _patientScriptRepository = patientScriptRepository;
         }
 
         [HttpPost(nameof(CreateOrUpdate))]
-        public async Task<IActionResult> CreateOrUpdate(PatientScriptDTO patientScriptDTO)
+        public async Task<IActionResult> CreateOrUpdate(PatientDoctorScriptDTO patientScriptDTO)
         {
             var patientScript = patientScriptDTO.MapDTOToModel();
             if (patientScript.Id == Guid.Empty)
@@ -44,7 +44,7 @@ namespace HospitalManagementSystemBackend.Controllers
         public async Task<IActionResult> GetScriptsByTokenId(Guid tokenId)
         {
             var response = await _patientScriptRepository.GetScriptsByTokenId(tokenId);
-            List<PatientScriptDTO> patientTokenDTOs = response.Select(r => r.MapModelToDTO()).ToList();
+            List<PatientDoctorScriptDTO> patientTokenDTOs = response.Select(r => r.MapModelToDTO()).ToList();
             return Ok(patientTokenDTOs);
         }
     }

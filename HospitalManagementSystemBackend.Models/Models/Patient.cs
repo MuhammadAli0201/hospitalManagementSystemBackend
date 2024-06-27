@@ -4,7 +4,8 @@ namespace HospitalManagementSystemBackend.Models.Models
 {
     public class Patient : Person
     {
-        public List<PatientToken> PatientTokens { get; set; }
+        public List<PatientDoctorToken> PatientDoctorTokens { get; set; }
+        public List<PatientDoctorScript> PatientDoctorScripts { get; set; }
 
         public override PatientDTO MapModelToDTO()
         {
@@ -19,7 +20,7 @@ namespace HospitalManagementSystemBackend.Models.Models
                 CNIC = this.CNIC,
                 Address = this.Address,
                 GenderId = this.GenderId,
-                Gender = this.Gender != null? this.Gender.MapModelToDTO() : null,
+                Gender = this.Gender != null? this.Gender.MapModelToDTO() : null
             };
         }
     }

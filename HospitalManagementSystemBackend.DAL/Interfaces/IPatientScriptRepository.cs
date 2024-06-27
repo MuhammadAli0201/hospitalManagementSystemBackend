@@ -2,8 +2,8 @@
 
 namespace HospitalManagementSystemBackend.DAL.Interfaces
 {
-    public interface IPatientScriptRepository : IRepository<PatientScript>
+    public interface IPatientScriptRepository : IRepository<PatientDoctorScript>
     {
-        public Task<List<PatientScript>> GetScriptsByTokenId(Guid tokenId);
+        public Task<List<PatientDoctorScript>> GetScriptsByTokenId(Guid tokenId);
     }
 }

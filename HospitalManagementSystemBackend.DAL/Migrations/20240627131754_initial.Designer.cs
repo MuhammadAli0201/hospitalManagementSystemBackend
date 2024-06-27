@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HospitalManagementSystemBackend.DAL.Migrations
 {
     [DbContext(typeof(HMSDbContext))]
-    [Migration("20240625131533_patient_token_new_column_token")]
-    partial class patient_token_new_column_token
+    [Migration("20240627131754_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -73,82 +73,82 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("3204524c-827c-4c02-b64a-0f27feff5c68"),
+                            Id = new Guid("3956b8ed-fed3-4014-b228-07cd637654c4"),
                             Name = "Paracetamol"
                         },
                         new
                         {
-                            Id = new Guid("94df7ffc-1281-4620-a64d-1c768b7c8df6"),
+                            Id = new Guid("d47413fe-d7f6-4a7e-8bf6-3db297320456"),
                             Name = "Ibuprofen"
                         },
                         new
                         {
-                            Id = new Guid("d54f2c00-e4a8-4d8f-907e-805f278df8a9"),
+                            Id = new Guid("e00eb757-a1d9-4d79-9ba5-227e531161e3"),
                             Name = "Loratadine"
                         },
                         new
                         {
-                            Id = new Guid("343f8fe6-f45d-42d4-b3fd-56c9dc003a79"),
+                            Id = new Guid("8ddfaaed-473d-4d7f-90b4-543985e27bd7"),
                             Name = "Omeprazole"
                         },
                         new
                         {
-                            Id = new Guid("03c85095-c976-43f3-aa1e-294e704147fc"),
+                            Id = new Guid("4d3062f2-0059-48e9-943e-bc93effbfb08"),
                             Name = "Amoxicillin"
                         },
                         new
                         {
-                            Id = new Guid("c76ed72a-e2e3-4dd9-87af-d36e0a127e66"),
+                            Id = new Guid("5f79d230-51f2-4b3d-a492-82e065328310"),
                             Name = "Simvastatin"
                         },
                         new
                         {
-                            Id = new Guid("fed1adc9-0778-494d-b2bf-cb257e13dd33"),
+                            Id = new Guid("4f337d3e-697b-4a7e-aa61-5144f5a66b47"),
                             Name = "Metformin"
                         },
                         new
                         {
-                            Id = new Guid("27355d7c-02fe-4254-a997-bdac889a94ff"),
+                            Id = new Guid("904ae690-717c-4083-afac-7485bdace557"),
                             Name = "Warfarin"
                         },
                         new
                         {
-                            Id = new Guid("a39d7eae-b49c-4066-90f3-dd2c65f8819b"),
+                            Id = new Guid("fb40ae30-08a5-4b10-8fe8-e047315bad07"),
                             Name = "Albuterol"
                         },
                         new
                         {
-                            Id = new Guid("2ad8b7b6-4f0e-4f0b-815c-582aed90727f"),
+                            Id = new Guid("18bc1ddc-be12-4d62-b3f4-d981f62ea1a3"),
                             Name = "Fluoxetine"
                         },
                         new
                         {
-                            Id = new Guid("ab55f1f2-ad69-40f2-aa7f-07c92071b761"),
+                            Id = new Guid("27ff31bf-5789-460b-a863-326beb671e82"),
                             Name = "Morphine"
                         },
                         new
                         {
-                            Id = new Guid("bc14bb02-e299-4f6e-87ea-db63c8b4bef3"),
+                            Id = new Guid("a424f0dc-4f04-4638-a354-f79d5849e7e7"),
                             Name = "Hydrochlorothiazide"
                         },
                         new
                         {
-                            Id = new Guid("8f097174-d4ad-4e7a-a31f-38c046ee0ea5"),
+                            Id = new Guid("33a3b54a-beab-49ee-a956-539d22ca52f3"),
                             Name = "Amlodipine"
                         },
                         new
                         {
-                            Id = new Guid("c8bdbd60-4d34-46fc-9367-0c676306b84c"),
+                            Id = new Guid("c4024b7b-7be2-4d4f-9b83-770b8fe78478"),
                             Name = "Prednisone"
                         },
                         new
                         {
-                            Id = new Guid("0920bdc0-62dd-425c-9e5c-09baf7d1607e"),
+                            Id = new Guid("a30038b5-0987-4b4d-9dc7-9f732f7fd5a6"),
                             Name = "Diazepam"
                         });
                 });
 
-            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientScript", b =>
+            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientDoctorScript", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -158,7 +158,13 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("PatientTokenId")
+                    b.Property<Guid>("DoctorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PatientDoctorTokenId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PatientId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("TotalBill")
@@ -169,12 +175,16 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PatientTokenId");
+                    b.HasIndex("DoctorId");
+
+                    b.HasIndex("PatientDoctorTokenId");
+
+                    b.HasIndex("PatientId");
 
                     b.ToTable("PatientScript");
                 });
 
-            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientScriptMedicine", b =>
+            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientDoctorScriptMedicine", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -183,22 +193,22 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                     b.Property<Guid>("MedicineId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("PatientScriptId")
+                    b.Property<Guid>("PatientDoctorScriptId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("PatientScriptId2")
+                    b.Property<Guid>("PatientDoctorScriptId2")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("MedicineId");
 
-                    b.HasIndex("PatientScriptId");
+                    b.HasIndex("PatientDoctorScriptId");
 
                     b.ToTable("PatientScriptMedicine");
                 });
 
-            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientToken", b =>
+            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientDoctorToken", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -213,11 +223,8 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                     b.Property<Guid>("PatientId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("Token")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<DateTime>("UpdatedTimeStamp")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
@@ -289,7 +296,7 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("a2be6b28-5009-41f7-b017-89b553555ad9"),
+                            Id = new Guid("994565cd-1702-4202-a85e-99a4a6cb0465"),
                             Address = "123 Main St, City",
                             Age = 35,
                             CNIC = "12345-678901",
@@ -302,7 +309,7 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("412c2eaf-09ad-4daf-b3b0-a72f395fb630"),
+                            Id = new Guid("7d757ee5-e68b-402a-b574-55a0b352de8d"),
                             Address = "456 Elm St, City",
                             Age = 40,
                             CNIC = "12345-678902",
@@ -315,7 +322,7 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("be4e5bcf-3ff2-46b2-84db-a283d789f7a9"),
+                            Id = new Guid("142e432d-5900-4acb-9cd0-2ff85aa3013a"),
                             Address = "789 Oak St, City",
                             Age = 45,
                             CNIC = "12345-678903",
@@ -328,7 +335,7 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7a491719-5e4c-4a66-b1d9-b329f6861c2c"),
+                            Id = new Guid("cffb1b14-8873-4a10-ba43-2b27a983ef88"),
                             Address = "234 Pine St, City",
                             Age = 38,
                             CNIC = "12345-678904",
@@ -341,7 +348,7 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("730e9aea-700c-40e5-8fe5-57211f9f68fe"),
+                            Id = new Guid("9c1f583e-b03d-4b4d-8ca9-433eb008f54e"),
                             Address = "567 Cedar St, City",
                             Age = 42,
                             CNIC = "12345-678905",
@@ -354,7 +361,7 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0ec584f4-f945-44e0-a53c-dbf4adf91680"),
+                            Id = new Guid("36698093-43fd-4cd7-8d3f-923eba4de962"),
                             Address = "890 Maple St, City",
                             Age = 37,
                             CNIC = "12345-678906",
@@ -374,18 +381,34 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                     b.HasDiscriminator().HasValue("Patient");
                 });
 
-            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientScript", b =>
+            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientDoctorScript", b =>
                 {
-                    b.HasOne("HospitalManagementSystemBackend.Models.Models.PatientToken", "PatientToken")
+                    b.HasOne("HospitalManagementSystemBackend.Models.Models.Doctor", "Doctor")
                         .WithMany("PatientScripts")
-                        .HasForeignKey("PatientTokenId")
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("HospitalManagementSystemBackend.Models.Models.PatientDoctorToken", "PatientDoctorToken")
+                        .WithMany("PatientDoctorScripts")
+                        .HasForeignKey("PatientDoctorTokenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("PatientToken");
+                    b.HasOne("HospitalManagementSystemBackend.Models.Models.Patient", "Patient")
+                        .WithMany("PatientDoctorScripts")
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
+
+                    b.Navigation("Patient");
+
+                    b.Navigation("PatientDoctorToken");
                 });
 
-            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientScriptMedicine", b =>
+            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientDoctorScriptMedicine", b =>
                 {
                     b.HasOne("HospitalManagementSystemBackend.Models.Models.Medicine", "Medicine")
                         .WithMany("PatientScriptMedicines")
@@ -393,18 +416,18 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HospitalManagementSystemBackend.Models.Models.PatientScript", "PatientScript")
+                    b.HasOne("HospitalManagementSystemBackend.Models.Models.PatientDoctorScript", "PatientDoctorScript")
                         .WithMany("PatientScriptMedicines")
-                        .HasForeignKey("PatientScriptId")
+                        .HasForeignKey("PatientDoctorScriptId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Medicine");
 
-                    b.Navigation("PatientScript");
+                    b.Navigation("PatientDoctorScript");
                 });
 
-            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientToken", b =>
+            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientDoctorToken", b =>
                 {
                     b.HasOne("HospitalManagementSystemBackend.Models.Models.Doctor", "Doctor")
                         .WithMany("PatientTokens")
@@ -413,9 +436,9 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                         .IsRequired();
 
                     b.HasOne("HospitalManagementSystemBackend.Models.Models.Patient", "Patient")
-                        .WithMany("PatientTokens")
+                        .WithMany("PatientDoctorTokens")
                         .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Doctor");
@@ -444,24 +467,28 @@ namespace HospitalManagementSystemBackend.DAL.Migrations
                     b.Navigation("PatientScriptMedicines");
                 });
 
-            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientScript", b =>
+            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientDoctorScript", b =>
                 {
                     b.Navigation("PatientScriptMedicines");
                 });
 
-            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientToken", b =>
+            modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.PatientDoctorToken", b =>
                 {
-                    b.Navigation("PatientScripts");
+                    b.Navigation("PatientDoctorScripts");
                 });
 
             modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.Doctor", b =>
                 {
+                    b.Navigation("PatientScripts");
+
                     b.Navigation("PatientTokens");
                 });
 
             modelBuilder.Entity("HospitalManagementSystemBackend.Models.Models.Patient", b =>
                 {
-                    b.Navigation("PatientTokens");
+                    b.Navigation("PatientDoctorScripts");
+
+                    b.Navigation("PatientDoctorTokens");
                 });
 #pragma warning restore 612, 618
         }

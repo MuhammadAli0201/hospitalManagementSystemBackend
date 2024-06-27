@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HospitalManagementSystemBackend.Models.Models
 {
-    public class PatientToken
+    public class PatientDoctorToken
     {
         public Guid Id { get; set; }
 
@@ -15,22 +15,20 @@ namespace HospitalManagementSystemBackend.Models.Models
         public Guid DoctorId { get; set; }
         public Doctor Doctor { get; set; }
         public DateTime Expiry { get; set; }
-        public string Status { get; set; }
-        public Guid Token { get; set; }
-        public List<PatientScript> PatientScripts { get; set; }
+        public DateTime UpdatedTimeStamp { get; set; }
+        public List<PatientDoctorScript> PatientDoctorScripts { get; set; }
 
-        public PatientTokenDTO MapModelToDTO()
+        public PatientDoctorTokenDTO MapModelToDTO()
         {
-            return new PatientTokenDTO
+            return new PatientDoctorTokenDTO
             {
                 Id = Id,
                 PatientId = PatientId,
-                Token = Token,
+                UpdatedTimeStamp=UpdatedTimeStamp,
                 Patient = this.Patient !=null? Patient.MapModelToDTO(): null,
                 DoctorId = DoctorId,
                 Doctor = this.Doctor != null ? Doctor.MapModelToDTO() : null,
                 Expiry = Expiry,
-                Status = Status
             };
         }
     }

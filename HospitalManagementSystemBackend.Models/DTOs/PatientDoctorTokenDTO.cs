@@ -1,14 +1,9 @@
-﻿using HospitalManagementSystemBackend.Models.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HospitalManagementSystemBackend.Models.Enums;
+using HospitalManagementSystemBackend.Models.Models;
 
 namespace HospitalManagementSystemBackend.Models.DTOs
 {
-    public class PatientTokenDTO
+    public class PatientDoctorTokenDTO
     {
         public Guid Id { get; set; }
         public Guid PatientId { get; set; }
@@ -16,21 +11,19 @@ namespace HospitalManagementSystemBackend.Models.DTOs
         public Guid DoctorId { get; set; }
         public DoctorDTO Doctor { get; set; }
         public DateTime Expiry { get; set; }
-        public string Status { get; set; }
-        public Guid Token { get; set; }
+        public PatientTokenExpiry Status { get; set; }
+        public DateTime UpdatedTimeStamp { get; set; }
 
-        public PatientToken MapDTOToModel()
+        public PatientDoctorToken MapDTOToModel()
         {
-            return new PatientToken
+            return new PatientDoctorToken
             {
                 Id = Id,
                 PatientId = PatientId,
                 Patient = this.Patient != null ? Patient.MapDTOToModel() : null,
                 DoctorId = DoctorId,
                 Doctor = this.Doctor != null ? Doctor.MapDTOToModel() : null,
-                Expiry = Expiry,
-                Status = Status,
-                Token=this.Token
+                Expiry = Expiry
             };
         }
     }

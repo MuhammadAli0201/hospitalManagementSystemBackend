@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystemBackend.Models.DTOs
 {
-    public class PatientScriptMedicineDTO
+    public class PatientDoctorScriptMedicineDTO
     {
         public Guid Id { get; set; }
-        public Guid PatientScriptId { get; set; }
+        public Guid PatientDoctorScriptId { get; set; }
         public Guid MedicineId { get; set; }
         public MedicineDTO Medicine { get; set; }
 
-        public PatientScriptMedicine MapDTOToModel()
+        public PatientDoctorScriptMedicine MapDTOToModel()
         {
-            return new PatientScriptMedicine
+            return new PatientDoctorScriptMedicine
             {
                 Id = this.Id,
-                PatientScriptId = this.PatientScriptId,
+                PatientDoctorScriptId = this.PatientDoctorScriptId,
                 MedicineId = this.MedicineId,
                 Medicine = this.Medicine != null ? this.Medicine.MapDTOToModel() : null
             };

@@ -3,24 +3,24 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HospitalManagementSystemBackend.Models.Models
 {
-    public class PatientScriptMedicine
+    public class PatientDoctorScriptMedicine
     {
         public Guid Id { get; set; }
 
-        [ForeignKey(nameof(PatientScript))]
-        public Guid PatientScriptId { get; set; }
-        public PatientScript PatientScript { get; set; }
+        [ForeignKey(nameof(PatientDoctorScript))]
+        public Guid PatientDoctorScriptId { get; set; }
+        public PatientDoctorScript PatientDoctorScript { get; set; }
 
         [ForeignKey(nameof(Medicine))]
         public Guid MedicineId { get; set; }
         public Medicine Medicine { get; set; }
 
-        public PatientScriptMedicineDTO MapModelToDTO()
+        public PatientDoctorScriptMedicineDTO MapModelToDTO()
         {
-            return new PatientScriptMedicineDTO
+            return new PatientDoctorScriptMedicineDTO
             {
                 Id = this.Id,
-                PatientScriptId = this.PatientScriptId,
+                PatientDoctorScriptId = this.PatientDoctorScriptId,
                 MedicineId = this.MedicineId,
                 Medicine = this.Medicine != null ? this.Medicine.MapModelToDTO() : null
             };

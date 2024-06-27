@@ -5,7 +5,8 @@ namespace HospitalManagementSystemBackend.Models.Models
     public class Doctor : Person
     {
         public string AreaOfSpecialization { get; set; }
-        public List<PatientToken> PatientTokens { get; set; }
+        public List<PatientDoctorToken> PatientDoctorTokens { get; set; }
+        public List<PatientDoctorScript> PatientDoctorScripts { get; set; }
 
         public override DoctorDTO MapModelToDTO()
         {

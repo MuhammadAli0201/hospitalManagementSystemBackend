@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HospitalManagementSystemBackend.DAL.Repositories
 {
-    public class PatientScriptRepository : Repository<PatientScript>, IPatientScriptRepository
+    public class PatientScriptRepository : Repository<PatientDoctorScript>, IPatientScriptRepository
     {
         private readonly HMSDbContext _context;
 
@@ -13,15 +13,15 @@ namespace HospitalManagementSystemBackend.DAL.Repositories
             _context = hMSDbContext;
         }
 
-        public async Task<List<PatientScript>> GetScriptsByTokenId(Guid tokenId)
+        public async Task<List<PatientDoctorScript>> GetScriptsByTokenId(Guid tokenId)
         {
             try
             {
                 var result = await _context.PatientScript
-                    .Include(ps => ps.PatientToken).ThenInclude(pt => pt.Doctor)
-                    .Include(ps => ps.PatientToken).ThenInclude(pt => pt.Patient)
-                    .Include(ps => ps.PatientScriptMedicines).ThenInclude(psm => psm.Medicine)
-                    .Where(ps => ps.PatientTokenId.Equals(tokenId)).OrderByDescending(ps => ps.VisitDate).ToListAsync();
+                    .Include(ps => ps.PatientDoctorToken).ThenInclude(pt => pt.Doctor)
+                    .Include(ps => ps.PatientDoctorToken).ThenInclude(pt => pt.Patient)
+                    .Include(ps => ps.PatientDoctorScriptMedicines).ThenInclude(psm => psm.Medicine)
+                    .Where(ps => ps.PatientDoctorTokenId.Equals(tokenId)).OrderByDescending(ps => ps.VisitDate).ToListAsync();
                 return result;
             }
             catch (Exception ex)
@@ -30,11 +30,11 @@ namespace HospitalManagementSystemBackend.DAL.Repositories
             }
         }
 
-        public async override Task<PatientScript> GetSingle(Guid id)
+        public async override Task<PatientDoctorScript> GetSingle(Guid id)
         {
             try
             {
-                var result = await _context.PatientScript.Include(ps => ps.PatientScriptMedicines).ThenInclude(psm => psm.Medicine).Where(ps => ps.Id.Equals(id)).FirstOrDefaultAsync();
+                var result = await _context.PatientScript.Include(ps => ps.PatientDoctorScriptMedicines).ThenInclude(psm => psm.Medicine).Where(ps => ps.Id.Equals(id)).FirstOrDefaultAsync();
                 return result;
             }
             catch (Exception ex)

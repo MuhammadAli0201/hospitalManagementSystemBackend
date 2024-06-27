@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystemBackend.DAL.Interfaces
 {
-    public interface IPatientTokenRepository :IRepository<PatientToken>
+    public interface IPatientTokenRepository :IRepository<PatientDoctorToken>
     {
-        public Task<List<PatientToken>> Search(string query);
-        public Task<List<PatientToken>> SearchByDateRange(DateTime min, DateTime max);
+        public Task<List<PatientDoctorToken>> GetLatest();
+        public Task<List<PatientDoctorToken>> SearchLatest(string query);
+        public Task<List<PatientDoctorToken>> SearchLatestByDateRange(DateTime min, DateTime max);
     }
 }

@@ -13,9 +13,15 @@ namespace HospitalManagementSystemBackend.DAL.Config
     {
         public void Configure(EntityTypeBuilder<Patient> builder)
         {
-            builder.HasMany(p => p.PatientTokens)
+            builder.HasMany(p => p.PatientDoctorTokens)
                 .WithOne(pt => pt.Patient)
                 .HasForeignKey(p => p.PatientId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+
+            builder.HasMany(d => d.PatientDoctorScripts)
+                .WithOne(ps => ps.Patient)
+                .HasForeignKey(ps => ps.PatientId)
                 .OnDelete(DeleteBehavior.NoAction);
         }
     }
