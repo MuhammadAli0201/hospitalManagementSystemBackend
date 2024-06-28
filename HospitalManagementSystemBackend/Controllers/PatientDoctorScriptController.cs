@@ -40,10 +40,10 @@ namespace HospitalManagementSystemBackend.Controllers
             return Ok(patientScriptTokenDTO);
         }
 
-        [HttpGet(nameof(GetScriptsByTokenId))]
-        public async Task<IActionResult> GetScriptsByTokenId(Guid tokenId)
+        [HttpGet(nameof(GetScriptsByPatientId))]
+        public async Task<IActionResult> GetScriptsByPatientId(Guid patientId)
         {
-            var response = await _patientScriptRepository.GetScriptsByTokenId(tokenId);
+            var response = await _patientScriptRepository.GetScriptsByPatientId(patientId);
             List<PatientDoctorScriptDTO> patientTokenDTOs = response.Select(r => r.MapModelToDTO()).ToList();
             return Ok(patientTokenDTOs);
         }

@@ -33,7 +33,7 @@ namespace HospitalManagementSystemBackend.DAL.Repositories
             {
                 var result = await _context.PatientToken.Include(pt => pt.Patient)
                     .ThenInclude(p => p.Gender).Include(pt => pt.Doctor).ThenInclude(d => d.Gender)
-                    .GroupBy(pt => pt.PatientId).Select(pt => pt.OrderBy(p => p.UpdatedTimeStamp).FirstOrDefault()).ToListAsync();
+                    .GroupBy(pt => pt.PatientId).Select(pt => pt.OrderByDescending(p => p.UpdatedTimeStamp).FirstOrDefault()).ToListAsync();
                 return result;
             }
             catch (Exception ex)

@@ -71,7 +71,7 @@ namespace HospitalManagementSystemBackend.Controllers
         [HttpGet(nameof(IsTokenUpdateable))]
         public async Task<IActionResult> IsTokenUpdateable(Guid id)
         {
-            var response = await _patientScriptRepository.GetScriptsByTokenId(id);
+            var response = await _patientScriptRepository.GetScriptsByPatientId(id);
             if (response.Any()) return Ok(false);
             else return Ok(true);
         }

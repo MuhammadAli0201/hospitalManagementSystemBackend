@@ -13,15 +13,14 @@ namespace HospitalManagementSystemBackend.DAL.Repositories
             _context = hMSDbContext;
         }
 
-        public async Task<List<PatientDoctorScript>> GetScriptsByTokenId(Guid tokenId)
+        public async Task<List<PatientDoctorScript>> GetScriptsByPatientId(Guid patientId)
         {
             try
             {
                 var result = await _context.PatientScript
-                    .Include(ps => ps.PatientDoctorToken).ThenInclude(pt => pt.Doctor)
-                    .Include(ps => ps.PatientDoctorToken).ThenInclude(pt => pt.Patient)
+                    .Include(ps => ps.PatientDoctorToken).Include(pt => pt.Doctor).Include(pt=>pt.Patient)
                     .Include(ps => ps.PatientDoctorScriptMedicines).ThenInclude(psm => psm.Medicine)
-                    .Where(ps => ps.PatientDoctorTokenId.Equals(tokenId)).OrderByDescending(ps => ps.VisitDate).ToListAsync();
+                    .Where(ps => ps.PatientId.Equals(patientId)).OrderByDescending(ps => ps.VisitDate).ToListAsync();
                 return result;
             }
             catch (Exception ex)
